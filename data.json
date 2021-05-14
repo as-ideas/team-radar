@@ -1,0 +1,78 @@
+{
+    "name": "Team amazing gutter",
+    "text": "",
+    "dimensions": [
+        {
+            "title": "backend",
+            "values": ["no idea", "junior", "mid-level", "senior", "spring cloud commiter", "backend god"]
+        },
+        {
+            "title": "frontend",
+            "values": ["please no", "used jquery", "junior", "frontend master", "angular js core commiter"]
+        },
+        {
+            "title": "ops/cloud",
+            "values": ["not used", "knows bash", "deploys to heroku", "loves ci", "runs k8s at home"]
+        },
+        {
+            "title": "interests",
+            "values": ["ci/cd", "agile", "springboot", "react", "typescript"]
+        },
+        {
+            "title": "experience",
+            "values": ["beginner", "junior", "well-rounded", "senior", "tech-lead"]
+        }
+    ],
+    "sections":[
+        {
+            "title": "the team",
+            "text": "",
+            "dimensions": ["backend", "frontend", "ops/cloud"],
+            "visualization": "triangle",
+            "votes": [{
+                    "name": "susan", 
+                    "votes": {"backend": 0, "frontend": 3, "ops/cloud": 0}
+                }, {
+                    "name": "peter", 
+                    "votes": {"backend": 4, "frontend": 0, "ops/cloud": 5}
+                }, {
+                    "name": "marry", 
+                    "votes": {"backend": 6, "frontend": 4, "ops/cloud": 3}
+                }]
+        },
+        {
+            "title": "our interests",
+            "text": "",
+            "dimensions": ["interest"],
+            "visualization": "wordcloud",
+            "votes": [ {
+                    "name": "susan", 
+                    "votes": {"ci/cd": 4, "springboot": 5}
+                }, {
+                    "name": "peter", 
+                    "votes": {"springboot":2, "typescript": 3}
+                }, {
+                    "name": "marry", 
+                    "votes": {"springboot":1, "agile": 5}
+                }
+            ]
+        },
+        {
+            "title": "wanted experience level", 
+            "text": "",
+            "dimensions": ["experience"],
+            "visualization": "scale",
+            "votes": [ {
+                "name": "susan", 
+                "votes": {"junior":1}
+            }, {
+                "name": "peter", 
+                "votes": {"junior":1, "well-rounded": 4}
+            }, {
+                "name": "marry", 
+                "votes": {"well-rounded": 5}
+            }
+        ]
+        }
+    ]
+}
