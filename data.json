@@ -54,8 +54,8 @@
       ]
     }
   ],
-  "sections": {
-    "team": {
+  "sections": [
+    {
       "title": "the team",
       "text": "",
       "dimensions": [
@@ -63,7 +63,7 @@
         "frontend",
         "ops/cloud"
       ],
-      "visualization": "triangle",
+      "visualization": "radar",
       "votes": [
         {
           "name": "susan",
@@ -91,7 +91,7 @@
         }
       ]
     },
-    "interest": {
+    {
       "title": "our interests",
       "text": "",
       "dimensions": [
@@ -122,7 +122,7 @@
         }
       ]
     },
-    "experience": {
+    {
       "title": "wanted experience level",
       "text": "",
       "dimensions": [
@@ -151,5 +151,5 @@
         }
       ]
     }
-  }
+  ]
 }

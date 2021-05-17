@@ -5,16 +5,37 @@ import './team-radar.css';
 import './components/radar-graph';
 import './components/linear-graph';
 
-const getDataUrl = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('team');
-}
+import 'whatwg-fetch';
 
 class TeamRadar extends LitElement {
 
+    loading = true;
+    teamName = "";
+    sections = [];
+
     constructor() {
-        super();
-        this.dataUrl = getDataUrl();
+        super()
+        this.loadSectionData()
+    }
+
+    loadSectionData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const config = {
+            team: urlParams.get('team') || 'as-ideas',
+            repository: urlParams.get('repo') || 'team-radar',
+            branch: urlParams.get('branch') || 'main'
+        };
+
+        let url = `https://raw.githubusercontent.com/${config.team}/${config.repository}/${config.branch}/data.json`;
+        return fetch(url)
+            .then(res => res.json())
+            .then(json => {
+                this.teamName = json.name;
+                this.sections = json.sections;
+            }).finally(() => {
+                this.loading = false;
+                this.requestUpdate();
+            })
     }
 
     // we don't want to use shadow dom t
@@ -22,26 +43,39 @@ class TeamRadar extends LitElement {
         return this;
     }
 
-
     renderComponent(section) {
-        switch (section) {
-            case "experience": return html`<linear-graph title="Experience"></linear-graph>`;
-            case "team": return html`<radar-graph title="Team"></radar-graph>`;
-            default: html``;
+        switch (section.visualization) {
+            case "radar":
+                return html`<radar-graph title=${section.title}></radar-graph>`;
+            case "linear":
+                return html`<linear-graph title="Team"></linear-graph>`;
+
+            default:
+                html``;
         }
     }
 
 
     render() {
+        console.log('render', this);
         const title = "Team 🧭 Radar";
 
-        return html`
-        <section class="team-radar">
+        if (this.loading) {
+            return html`<main class="team-radar">
+                             <h1>${title}</h1>
+                            <section>We are loading the data ...</section>
+                </main>`;
+        }
+
+        let renderedSections = this.sections.forEach(section => this.renderComponent(section));
+
+        return html`<main class="team-radar">
             <h1>${title}</h1>
-            ${this.renderComponent("team")}
-            ${this.renderComponent("experience")}
-        </section>`;
+            <p>You are viewing the team-radar for the team '${this.teamName}'. </p>
+            ${renderedSections}
+        </main>`;
     }
 }
+
 customElements.define('team-radar', TeamRadar);
 

@@ -7,7 +7,6 @@ class RadarGraph extends LitElement {
             id: {type: String},
             title: {type: String},
             text: {type: String},
-            data: {type: Array}
         };
     }
 

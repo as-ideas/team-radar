@@ -7,7 +7,6 @@ class LinearGraph extends LitElement {
             id: {type: String},
             title: {type: String},
             text: {type: String},
-            data: {type: Array}
         };
     }
 
@@ -52,6 +51,7 @@ class LinearGraph extends LitElement {
     }
 
     render() {
+        console.log(this.data);
         return html`
         <section>
             <h1>${this.title}</h1>
