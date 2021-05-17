@@ -49,7 +49,6 @@ class TeamRadar extends LitElement {
                 return html`<radar-graph title=${section.title}></radar-graph>`;
             case "linear":
                 return html`<linear-graph title="Team"></linear-graph>`;
-
             default:
                 html``;
         }
@@ -67,7 +66,7 @@ class TeamRadar extends LitElement {
                 </main>`;
         }
 
-        let renderedSections = this.sections.forEach(section => this.renderComponent(section));
+        let renderedSections = this.sections.map(section => this.renderComponent(section));
 
         return html`<main class="team-radar">
             <h1>${title}</h1>

@@ -14,7 +14,6 @@ class RadarGraph extends LitElement {
         super();
         this.title = 'RadarGraph';
         this.text = '';
-        this.data = [];
     }
 
     firstUpdated() {
@@ -22,20 +21,20 @@ class RadarGraph extends LitElement {
             data: {
                 x: "x",
                 columns: [
-                    ["x", "Data A", "Data B", "Data C", "Data D", "Data E"],
-                    ["data1", 330, 350, 200, 380, 150],
-                    ["data2", 130, 100, 30, 200, 80],
-                    ["data3", 230, 153, 85, 300, 250]
+                    ["x", "backend", "frontend", "ops/cloud"],
+                    ["Susi", 0, 2, 4],
+                    ["Peter",  6, 5, 5],
+                    ["marry",  2, 3, 5]
                 ],
-                type: radar(), // for ESM specify as: radar()
+                type: radar(),
                 labels: true
             },
             radar: {
                 axis: {
-                    max: 400
+                    max: 10
                 },
                 level: {
-                    depth: 4
+                    depth: 2
                 },
                 direction: {
                     clockwise: true
