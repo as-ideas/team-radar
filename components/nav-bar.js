@@ -19,7 +19,7 @@ class NavBar extends LitElement {
 
     render() {
         return html`<header>
-              <a href="#" class="logo">Logo</a>
+              <a href="#" class="logo">Team 🧭 Radar</a>
               ${this.links.map(link => html`<a href="#${idGenerator(link)}" class="button">${link}</a>`)}
             </header>`;
     }

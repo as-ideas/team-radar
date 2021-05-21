@@ -23,11 +23,25 @@ class BarGraph extends LitElement {
             data: {
                 columns: this.data,
                 type: bar(),
+
+            },
+            axis: {
+                x: {
+                    tick: {
+                        text: {
+                            show: false
+                        }
+                    }
+                }
             },
             bar: {
                 width: {
-                    ratio: 0.2
-                }
+                    ratio: 0.3,
+                },
+                padding: 10
+            },
+            tooltip: {
+                show: false,
             },
             bindto: `#bar-graph-${this.id}`
         });

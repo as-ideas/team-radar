@@ -9,7 +9,7 @@ import './components/nav-bar';
 
 import 'whatwg-fetch';
 
-export const idGenerator = (str) => (''+ btoa(str)).substr(0,6)
+export const idGenerator = (str) => ('' + btoa(str)).substr(0, 6)
 
 class TeamRadar extends LitElement {
 
@@ -69,13 +69,15 @@ class TeamRadar extends LitElement {
 
 
     render() {
-        const title = "Team 🧭 Radar";
         const links = this.sections.map(section => section.title);
 
         if (this.loading) {
-            return html`<main class="team-radar container">
-                             <h1>${title}</h1>
-                            <section>We are loading the data ...</section>
+            return html`<main class="team-radar">
+                      <div class="card mg-0-auto">
+                        <div class="section">
+                          <p>We are loading the data ...</p>
+                        </div>
+                      </div>
                 </main>`;
         }
 
@@ -85,15 +87,13 @@ class TeamRadar extends LitElement {
                 <div class="row">
                 <div class="col-lg-4 col-md-3 col-sm-1"></div>
                     <div class="col-lg-4 col-md-6 col-sm-10">
-                        <h1>${title}</h1>
-                        <p>You are viewing the team-radar for the team '${this.teamName}'. </p>
+                            <div class="section">
+                            You are viewing the team-radar for the team '${this.teamName}'. 
+                        </div>
                         ${(this.sections.map(section => this.renderComponent(section)))}
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-1"></div>
                 </div>
-                
-            <bar-graph></bar-graph>
-
             </main>`;
     }
 }

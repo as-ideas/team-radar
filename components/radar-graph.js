@@ -60,6 +60,9 @@ class RadarGraph extends LitElement {
                     clockwise: true
                 }
             },
+            tooltip: {
+                show: false,
+            },
             bindto: `#radar-graph-${this.id}`
         });
     }
