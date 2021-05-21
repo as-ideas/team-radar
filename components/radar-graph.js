@@ -1,12 +1,32 @@
 import {html, LitElement} from 'lit-element';
 import bb, {radar} from 'billboard.js';
 
+const extractDimensions = (data = []) => {
+    let entries = [];
+    data.forEach(entry => {
+        entries = entries.concat(Object.keys(entry))
+    });
+    let x = new Set([ ...entries]).keys();
+    return [...x];
+}
+
+const extractEntries = (dimensions, data = []) => {
+    const entries = [];
+    data.forEach((entry, idx) => {
+        let newEntry = ['member'+idx];
+        dimensions.forEach(dimension => newEntry.push(entry[dimension] ? entry[dimension] : 0))
+        entries.push(newEntry);
+    })
+    return entries
+}
+
 class RadarGraph extends LitElement {
     static get properties() {
         return {
             id: {type: String},
             title: {type: String},
             text: {type: String},
+            data: {type: Array}
         };
     }
 
@@ -14,19 +34,18 @@ class RadarGraph extends LitElement {
         super();
         this.title = 'RadarGraph';
         this.text = '';
-        console.log(this.title);
+        this.data = [];
     }
 
     firstUpdated() {
+        let dimensions = extractDimensions(this.data);
+        let entries = extractEntries(dimensions, this.data);
+
+        const columns = [["x", ...dimensions], ...entries]
         bb.generate({
             data: {
                 x: "x",
-                columns: [
-                    ["x", "backend", "frontend", "ops/cloud"],
-                    ["Susi", 0, 2, 4],
-                    ["Peter",  6, 5, 5],
-                    ["marry",  2, 3, 5]
-                ],
+                columns: columns,
                 type: radar(),
                 labels: true
             },

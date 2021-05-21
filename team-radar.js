@@ -28,7 +28,6 @@ class TeamRadar extends LitElement {
         };
 
         let url = `https://raw.githubusercontent.com/${config.team}/${config.repository}/${config.branch}/data.json`;
-        console.log('loading data from:', url);
         return fetch(url)
             .then(res => res.json())
             .then(json => {
@@ -37,7 +36,6 @@ class TeamRadar extends LitElement {
             })
             .finally(() => {
                 this.loading = false;
-                console.log(this.sections);
                 this.requestUpdate();
             })
     }
@@ -55,11 +53,11 @@ class TeamRadar extends LitElement {
 
         switch (visualization) {
             case "radar":
-                return html`<radar-graph title="${title}" text="${text}" data="${data}"></radar-graph>`;
+                return html`<radar-graph title="${title}" text="${text}" .data="${data}"></radar-graph>`;
             case "linear":
-                return html`<linear-graph title="${title}" text="${text}" data="${data}"></linear-graph>`;
+                return html`<linear-graph title="${title}" text="${text}" .data="${data}"></linear-graph>`;
             case "wordcloud":
-                return html`<wordcloud-graph title="${title}" text="${text}" data="${data}"></wordcloud-graph>`;
+                return html`<wordcloud-graph title="${title}" text="${text}" .data="${data}"></wordcloud-graph>`;
             default:
                 html`<p>Unknown section ${visualization}</p>`;
         }

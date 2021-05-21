@@ -3,12 +3,17 @@ import WordCloud from 'wordcloud';
 
 const groupWords = (data = []) => {
     let buckets = {};
-    data.forEach(entry => {
-        buckets[entry] =  buckets[entry] ? buckets[entry] + 1 : 1;
-    })
+    data.forEach(entry => buckets[entry] = buckets[entry] ? buckets[entry] + 1 : 1)
+    return Object.keys(buckets).map(key => [key, buckets[key]]);
+}
 
-    let keys = Object.keys(buckets);
-    return keys.map(key => [key, buckets[key]]);
+const wordCloudConfiguration = {
+    gridSize: 16,
+    weightFactor: 16,
+    origin: [90, 0],
+    fontFamily: 'Times, serif',
+    color: 'random-dark',
+    backgroundColor: 'transparent'
 }
 
 class WordCloudGraph extends LitElement {
@@ -31,7 +36,7 @@ class WordCloudGraph extends LitElement {
     firstUpdated() {
         const elementSelector = `wordcloud-graph-${this.id}`;
         const words = groupWords(this.data || []);
-        WordCloud(document.getElementById(elementSelector), { list: words, shrinkToFit: true, weightFactor: 3, backgroundColor: 'transparent'} );
+        WordCloud(document.getElementById(elementSelector), { list: words, ...wordCloudConfiguration} );
     }
 
     // we don't want to use shadow dom t
@@ -44,7 +49,7 @@ class WordCloudGraph extends LitElement {
         <section>
             <h1>${this.title}</h1>
             <p>${this.text}</p>
-            <canvas width="80%" id="wordcloud-graph-${this.id}"></canvas>
+            <canvas id="wordcloud-graph-${this.id}"></canvas>
         </section>`;
     }
 }
