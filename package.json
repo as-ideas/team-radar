@@ -1,0 +1,22 @@
+{
+  "name": "team-radar",
+  "version": "1.0.0",
+  "description": "Team Radar helps teams and applicants formulate and visualize their areas of expertize and what they are looking for.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "billboard.js": "^3.0.3",
+    "components": "^0.1.0",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
+    "mini.css": "^3.0.1",
+    "whatwg-fetch": "^3.6.2",
+    "wordcloud": "^1.2.2"
+  }
+}

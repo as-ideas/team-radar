@@ -15,6 +15,7 @@ class LinearGraph extends LitElement {
         this.title = 'LinearGraph';
         this.text = '';
         this.data = [];
+        console.log(this.title);
     }
 
     firstUpdated() {
@@ -51,7 +52,6 @@ class LinearGraph extends LitElement {
     }
 
     render() {
-        console.log(this.data);
         return html`
         <section>
             <h1>${this.title}</h1>

@@ -1,153 +1,69 @@
 {
   "name": "Team amazing gutter",
-  "text": "",
-  "dimensions": [
-    {
-      "title": "backend",
-      "values": [
-        "no idea",
-        "junior",
-        "mid-level",
-        "senior",
-        "spring cloud commiter",
-        "backend god"
-      ]
-    },
-    {
-      "title": "frontend",
-      "values": [
-        "please no",
-        "used jquery",
-        "junior",
-        "frontend master",
-        "angular js core commiter"
-      ]
-    },
-    {
-      "title": "ops/cloud",
-      "values": [
-        "not used",
-        "knows bash",
-        "deploys to heroku",
-        "loves ci",
-        "runs k8s at home"
-      ]
-    },
-    {
-      "title": "interests",
-      "values": [
-        "ci/cd",
-        "agile",
-        "springboot",
-        "react",
-        "typescript"
-      ]
-    },
-    {
-      "title": "experience",
-      "values": [
-        "beginner",
-        "junior",
-        "well-rounded",
-        "senior",
-        "tech-lead"
-      ]
-    }
-  ],
+  "text": "Welcome!",
   "sections": [
     {
       "title": "the team",
-      "text": "",
-      "dimensions": [
-        "backend",
-        "frontend",
-        "ops/cloud"
-      ],
+      "text": "We are a cross functional team. As you can see, most of us have a certain focus, but can do every task needed to get the job done. ",
       "visualization": "radar",
-      "votes": [
+      "data": [
         {
-          "name": "susan",
-          "votes": {
-            "backend": 0,
-            "frontend": 3,
-            "ops/cloud": 0
-          }
+          "backend": 0,
+          "frontend": 3,
+          "ops/cloud": 0
         },
         {
-          "name": "peter",
-          "votes": {
-            "backend": 4,
-            "frontend": 0,
-            "ops/cloud": 5
-          }
+          "backend": 4,
+          "frontend": 0,
+          "ops/cloud": 5
         },
         {
-          "name": "marry",
-          "votes": {
-            "backend": 6,
-            "frontend": 4,
-            "ops/cloud": 3
-          }
+          "backend": 6,
+          "frontend": 4,
+          "ops/cloud": 3
         }
       ]
     },
     {
       "title": "our interests",
-      "text": "",
-      "dimensions": [
-        "interest"
-      ],
+      "text": "Currently we are interested in the following topics",
       "visualization": "wordcloud",
-      "votes": [
-        {
-          "name": "susan",
-          "votes": {
-            "ci/cd": 4,
-            "springboot": 5
-          }
-        },
-        {
-          "name": "peter",
-          "votes": {
-            "springboot": 2,
-            "typescript": 3
-          }
-        },
-        {
-          "name": "marry",
-          "votes": {
-            "springboot": 1,
-            "agile": 5
-          }
-        }
+      "data": [
+        "ci/cd",
+        "ci/cd",
+        "agile",
+        "springboot",
+        "react",
+        "typescript",
+        "xp",
+        "xp",
+        "xp",
+        "tdd",
+        "tdd",
+        "ddd",
+        "ddd",
+        "ddd",
+        "ddd",
+        "ddd",
+        "ddd",
+        "scrum"
       ]
     },
     {
       "title": "wanted experience level",
-      "text": "",
-      "dimensions": [
-        "experience"
-      ],
-      "visualization": "scale",
-      "votes": [
+      "text": "We are looking for a new team mate with the following experience level",
+      "visualization": "linear",
+      "data": [
         {
-          "name": "susan",
-          "votes": {
-            "junior": 1
-          }
+          "junior": 3
         },
         {
-          "name": "peter",
-          "votes": {
-            "junior": 1,
-            "well-rounded": 4
-          }
+          "junior": 1,
+          "well-rounded": 4
         },
         {
-          "name": "marry",
-          "votes": {
-            "well-rounded": 5
-          }
+          "well-rounded": 5,
+          "junior": 4
         }
       ]
     }

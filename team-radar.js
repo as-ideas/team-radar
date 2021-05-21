@@ -4,6 +4,7 @@ import './team-radar.css';
 
 import './components/radar-graph';
 import './components/linear-graph';
+import './components/wordcloud-graph';
 
 import 'whatwg-fetch';
 
@@ -27,13 +28,16 @@ class TeamRadar extends LitElement {
         };
 
         let url = `https://raw.githubusercontent.com/${config.team}/${config.repository}/${config.branch}/data.json`;
+        console.log('loading data from:', url);
         return fetch(url)
             .then(res => res.json())
             .then(json => {
                 this.teamName = json.name;
                 this.sections = json.sections;
-            }).finally(() => {
+            })
+            .finally(() => {
                 this.loading = false;
+                console.log(this.sections);
                 this.requestUpdate();
             })
     }
@@ -44,19 +48,25 @@ class TeamRadar extends LitElement {
     }
 
     renderComponent(section) {
-        switch (section.visualization) {
+        const visualization = section.visualization;
+        const title = section.title || 'Title';
+        const text = section.text || 'Text';
+        const data = section.data || null;
+
+        switch (visualization) {
             case "radar":
-                return html`<radar-graph title=${section.title}></radar-graph>`;
+                return html`<radar-graph title="${title}" text="${text}" data="${data}"></radar-graph>`;
             case "linear":
-                return html`<linear-graph title="Team"></linear-graph>`;
+                return html`<linear-graph title="${title}" text="${text}" data="${data}"></linear-graph>`;
+            case "wordcloud":
+                return html`<wordcloud-graph title="${title}" text="${text}" data="${data}"></wordcloud-graph>`;
             default:
-                html``;
+                html`<p>Unknown section ${visualization}</p>`;
         }
     }
 
 
     render() {
-        console.log('render', this);
         const title = "Team 🧭 Radar";
 
         if (this.loading) {
@@ -66,12 +76,10 @@ class TeamRadar extends LitElement {
                 </main>`;
         }
 
-        let renderedSections = this.sections.map(section => this.renderComponent(section));
-
         return html`<main class="team-radar">
             <h1>${title}</h1>
             <p>You are viewing the team-radar for the team '${this.teamName}'. </p>
-            ${renderedSections}
+            ${(this.sections.map(section => this.renderComponent(section)))}
         </main>`;
     }
 }

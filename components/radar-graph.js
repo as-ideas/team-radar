@@ -14,6 +14,7 @@ class RadarGraph extends LitElement {
         super();
         this.title = 'RadarGraph';
         this.text = '';
+        console.log(this.title);
     }
 
     firstUpdated() {
