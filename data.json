@@ -52,19 +52,14 @@
     {
       "title": "wanted experience level",
       "text": "We are looking for a new team mate with the following experience level",
-      "visualization": "linear",
+      "visualization": "bar",
       "data": [
-        {
-          "junior": 3
-        },
-        {
-          "junior": 1,
-          "well-rounded": 4
-        },
-        {
-          "well-rounded": 5,
-          "junior": 4
-        }
+        ["entry", 0],
+        ["junior", 4],
+        ["some experience", 3],
+        ["mid level", 2],
+        ["senior", 1],
+        ["mastermind", 0]
       ]
     }
   ]

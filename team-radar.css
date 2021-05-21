@@ -1,8 +1,7 @@
-.team-radar {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
 section {
     padding-top: 2em;
+}
+
+main {
+    padding-top: 2em !important;
 }
