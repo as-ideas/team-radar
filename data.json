@@ -1,26 +1,35 @@
 {
-  "name": "Team amazing gutter",
+  "name": "Team Tailors",
   "text": "Welcome!",
   "sections": [
     {
       "title": "the team",
-      "text": "We are a cross functional team. As you can see, most of us have a certain focus, but can do every task needed to get the job done. ",
+      "text": "We are a cross functional team and are looking for a new team members. As you can see, most of us have a certain focus, but can do every task needed to get the job done. ",
       "visualization": "radar",
       "data": [
         {
-          "backend": 0,
-          "frontend": 3,
-          "ops/cloud": 0
+          "backend": 8,
+          "frontend": 4,
+          "ops/cloud": 4,
+          "product": 3
         },
         {
-          "backend": 4,
-          "frontend": 0,
-          "ops/cloud": 5
+          "backend": 5,
+          "frontend": 6,
+          "ops/cloud": 2,
+          "product": 4
         },
         {
           "backend": 6,
-          "frontend": 4,
-          "ops/cloud": 3
+          "frontend": 3,
+          "ops/cloud": 8,
+          "product": 5
+        },
+        {
+          "backend": 1,
+          "frontend": 1,
+          "ops/cloud": 1,
+          "product": 9
         }
       ]
     },
@@ -29,37 +38,56 @@
       "text": "Currently we are interested in the following topics",
       "visualization": "wordcloud",
       "data": [
-        "ci/cd",
-        "ci/cd",
+        "ddd",
+        "ddd",
+        "ddd",
+        "audio",
+        "coffee",
+        "kotlin",
+        "software engineering",
+        "software engineering",
+        "software engineering",
+        "patterns",
+        "domain story telling",
+        "tactical design",
+        "kanban",
+        "aws cdk",
+        "aws cdk",
+        "event storming",
+        "uml",
+        "uml",
+        "uml",
+        "gitops",
+        "gitops",
+        "gitops",
+        "tts",
+        "kotlin",
+        "spring boot",
+        "sustainability",
+        "sustainability",
+        "climate",
+        "climate",
+        "climate",
+        "frontend fatigue",
         "agile",
-        "springboot",
-        "react",
-        "typescript",
-        "xp",
-        "xp",
-        "xp",
-        "tdd",
-        "tdd",
-        "ddd",
-        "ddd",
-        "ddd",
-        "ddd",
-        "ddd",
-        "ddd",
-        "scrum"
+        "agile",
+        "agile",
+        "golang",
+        "golang",
+        "ddd"
       ]
     },
     {
       "title": "wanted experience level",
-      "text": "We are looking for a new team mate with the following experience level",
+      "text": "We are looking for a new member with the following experience level",
       "visualization": "bar",
       "data": [
         ["entry", 0],
-        ["junior", 4],
+        ["junior", 2],
         ["some experience", 3],
-        ["mid level", 2],
-        ["senior", 1],
-        ["mastermind", 0]
+        ["mid level", 4],
+        ["senior", 3],
+        ["principal", 0]
       ]
     }
   ]
