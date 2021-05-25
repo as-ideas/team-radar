@@ -99,4 +99,3 @@ class TeamRadar extends LitElement {
 }
 
 customElements.define('team-radar', TeamRadar);
-
