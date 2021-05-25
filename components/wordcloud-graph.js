@@ -8,12 +8,12 @@ const groupWords = (data = []) => {
 }
 
 const wordCloudConfiguration = {
-    gridSize: 16,
     weightFactor: 16,
-    origin: [90, 0],
     fontFamily: 'Times, serif',
     color: 'random-dark',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    shrinkToFit: true,
+    minSize: 12,
 }
 
 class WordCloudGraph extends LitElement {
@@ -49,7 +49,7 @@ class WordCloudGraph extends LitElement {
         <section>
             <h1>${this.title}</h1>
             <p>${this.text}</p>
-            <canvas id="wordcloud-graph-${this.id}"></canvas>
+            <canvas width="600" height="400" id="wordcloud-graph-${this.id}"></canvas>
         </section>`;
     }
 }
