@@ -4,7 +4,7 @@
   "sections": [
     {
       "title": "the team",
-      "text": "We are a cross functional team and are looking for a new team members. As you can see, most of us have a certain focus, but can do every task needed to get the job done. ",
+      "text": "We are a cross functional team and are looking for new team members. As you can see, most of us have a certain focus, but can do every task needed to get the job done. Send us a mail: hello@asideas.de",
       "visualization": "radar",
       "data": [
         {
@@ -56,7 +56,6 @@
         "event storming",
         "uml",
         "uml",
-        "uml",
         "gitops",
         "gitops",
         "gitops",
@@ -68,7 +67,7 @@
         "climate",
         "climate",
         "climate",
-        "frontend fatigue",
+        "frontend magic",
         "agile",
         "agile",
         "agile",
