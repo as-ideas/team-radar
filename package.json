@@ -11,7 +11,7 @@
     "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
-    "billboard.js": "^3.0.3",
+    "billboard.js": "^3.6.0",
     "components": "^0.1.0",
     "lit-element": "^2.5.1",
     "lit-html": "^1.4.1",
